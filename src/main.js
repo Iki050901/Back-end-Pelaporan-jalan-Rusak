@@ -13,6 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
 web.get('/', (req, res) => {
   res.send(`<h1>✅ Express Backend Jalan di Vercel</h1>`);
 });
+export default serverless(web);
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const PORT = process.env.PORT || 3000;
@@ -27,4 +28,4 @@ web.get('/', (req, res) => {
 //     </h1>
 //   `);
 // });
-export default serverless(web);
+
