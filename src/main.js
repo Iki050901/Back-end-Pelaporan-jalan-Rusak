@@ -1,6 +1,21 @@
-import {web} from './application/web.js';
-import {logger} from './application/logging.js';
+import { web } from './application/web.js';
+import { logger } from './application/logging.js';
+import serverless from 'serverless-http';
 
-web.listen(process.env.PORT, () => {
-    logger.info("App Start");
-})
+// ✅ Untuk Vercel (Serverless Export)
+export const handler = serverless(web);
+
+// ✅ Untuk Lokal Development
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  web.listen(PORT, () => {
+    logger.info(`App running at http://localhost:${PORT}`);
+  });
+}
+web.get('/', (req, res) => {
+  res.send(`
+    <h1 style="font-family: sans-serif; color: green; text-align: center; margin-top: 50px;">
+      ✅ Backend Express Berhasil Jalan di Port 3100
+    </h1>
+  `);
+});
