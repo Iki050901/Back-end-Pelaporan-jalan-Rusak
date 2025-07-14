@@ -21,6 +21,9 @@ web.use(express.json());
 web.use(express.urlencoded({ extended: true }));
 web.use(cors(corsOptions));
 web.use(passport.initialize());
+web.get('/', (req, res) => {
+  res.send('<h1>API Running....</h1>');
+});
 web.use(publicRouter);
 web.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 web.use(usersRouter);
