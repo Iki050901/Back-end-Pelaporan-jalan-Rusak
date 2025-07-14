@@ -2,14 +2,12 @@
   "name": "lapor-jalan",
   "version": "0.0.0",
   "private": true,
-  "main": "src/main.js",
+
   "type": "module",
+   "main": "index.js",
   "scripts": {
-    "test": "jest -i",
-    "seed": "node ./prisma/seed.js",
-    "build": "prisma generate",
-    "start": "nodemon src/main.js",
-    "postinstall": "prisma generate"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "prisma": {
     "schema": "./prisma/schema.prisma"
