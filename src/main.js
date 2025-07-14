@@ -27,4 +27,4 @@ web.get('/', (req, res) => {
 //     </h1>
 //   `);
 // });
-// export default serverless(web);
+export default serverless(web);
