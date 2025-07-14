@@ -2,9 +2,6 @@ import { web } from './application/web.js';
 import { logger } from './application/logging.js';
 import serverless from 'serverless-http';
 
-
-export const handler = serverless(web);
-
 // if (process.env.NODE_ENV !== 'production') {
 //   const PORT = process.env.PORT || 3000;
 //   web.listen(PORT, () => {
@@ -18,4 +15,4 @@ export const handler = serverless(web);
 //     </h1>
 //   `);
 // });
-// export default serverless(web);
+export default serverless(web);
