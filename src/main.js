@@ -1,13 +1,14 @@
 // import { web } from './application/web.js';
 // import { logger } from './application/logging.js';
-import serverless from 'serverless-http';
-import express from 'express';
-export const web = express();
-
-web.get('/', (req, res) => {
-  res.send(`<h1>✅ Express Backend Jalan di Vercel</h1>`);
-});
-export default serverless(web);
+// import serverless from 'serverless-http';
+// import express from 'express';
+const app = express();
+app.get('/', (req, res) => res.send('Welcome to the Users API!'));
+app.all('*', (req, res) => res.send("You've tried reaching a route that doesn't exist."));
+// web.get('/', (req, res) => {
+//   res.send(`<h1>✅ Express Backend Jalan di Vercel</h1>`);
+// });
+// export default serverless(web);
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const PORT = process.env.PORT || 3000;
