@@ -2,8 +2,7 @@ import { web } from './application/web.js';
 import { logger } from './application/logging.js';
 import serverless from 'serverless-http';
 
-// ✅ Untuk Vercel (Serverless Export)
-export const handler = serverless(web);
+
 
 // ✅ Untuk Lokal Development
 if (process.env.NODE_ENV !== 'production') {
@@ -19,3 +18,4 @@ web.get('/', (req, res) => {
     </h1>
   `);
 });
+export default serverless(web);
