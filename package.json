@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest -i",
     "seed": "node ./prisma/seed.js",
+    "build": "prisma generate",
     "start": "nodemon src/main.js"
   },
   "prisma": {
