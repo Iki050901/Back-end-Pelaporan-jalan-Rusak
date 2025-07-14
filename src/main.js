@@ -1,6 +1,13 @@
-import { web } from './application/web.js';
-import { logger } from './application/logging.js';
+// import { web } from './application/web.js';
+// import { logger } from './application/logging.js';
 import serverless from 'serverless-http';
+import express from 'express';
+export const web = express();
+
+web.get('/', (req, res) => {
+  res.send(`<h1>✅ Express Backend Jalan di Vercel</h1>`);
+});
+export default serverless(web);
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const PORT = process.env.PORT || 3000;
@@ -15,4 +22,3 @@ import serverless from 'serverless-http';
 //     </h1>
 //   `);
 // });
-export default serverless(web);
