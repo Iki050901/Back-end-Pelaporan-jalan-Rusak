@@ -1,7 +1,7 @@
 // import { web } from './application/web.js';
 // import { logger } from './application/logging.js';
 // import serverless from 'serverless-http';
-// import express from 'express';
+import express from 'express';
 const app = express();
 app.get('/', (req, res) => res.send('Welcome to the Users API!'));
 app.all('*', (req, res) => res.send("You've tried reaching a route that doesn't exist."));
